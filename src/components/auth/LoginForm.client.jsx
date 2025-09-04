@@ -5,6 +5,8 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Image from "next/image";
 import Logo from "../../assets/main logo.png";
+import emailIcon from "../../assets/sms.svg";
+import lockIcon from "../../assets/lock.svg";
 // import meetUs from "../../assets/meet us.png";
 // import meetUs from "../../assets/meet us.png";
 
@@ -23,22 +25,31 @@ export default function LoginForm() {
 
   return (
     <>
-      <section className="grid grid-cols-1 md:grid-cols-2 items-center">
+      <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-12">
         <div className="">
-          <div className="w-full md:w-[554px] text-center h-[415px]">
+          <div className="w-full lg:w-[554px] text-center h-[415px]">
             <h1 className="font-[400] text-[56px] text-[#1A1A1E]">
               Welcome back
             </h1>
-            <p className="font-[400] text-[18px] w-[381px] h-[56px] mx-auto text-[#62626B]">
+            <p className="font-[400] text-[18px] lg:w-[381px] h-[56px] mx-auto text-[#62626B]">
               Step into our shopping metaverse for an unforgettable shopping
               experience
             </p>
 
             <form
               onSubmit={handleSubmit}
-              className="w-[90%] md:w-[70%] mx-auto mt-8"
+              className="w-[90%] lg:w-[70%] mx-auto mt-8"
             >
-              <div>
+              <div className="relative mb-3">
+                <div className="absolute inset-y-0 start-0 -top-3 flex items-center ps-3.5 pointer-events-none">
+                  <Image
+                    src={emailIcon}
+                    alt="email"
+                    width={20}
+                    height={20}
+                    className="mr-3 opacity-70"
+                  />
+                </div>
                 <Input
                   type="email"
                   placeholder="Email"
@@ -47,7 +58,16 @@ export default function LoginForm() {
                 />
               </div>
 
-              <div>
+              <div className="relative">
+                <div className="absolute inset-y-0 start-0 -top-3 flex items-center ps-3.5 pointer-events-none">
+                  <Image
+                    src={lockIcon}
+                    alt="email"
+                    width={20}
+                    height={20}
+                    className="mr-3 opacity-70"
+                  />
+                </div>
                 <Input
                   type="password"
                   placeholder="Password"
@@ -69,7 +89,7 @@ export default function LoginForm() {
           </div>
         </div>
 
-        <div className=" min-h-screen">
+        <div className="">
           <div className="text-center w-full h-full">
             <Image
               src={Logo}
