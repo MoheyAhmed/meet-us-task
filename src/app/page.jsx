@@ -1,7 +1,14 @@
-"use client";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import LoginForm from "../components/auth/LoginForm.client";
 
 export default function Page() {
+   const token = cookies().get("auth-token")?.value;
+
+  // لو في توكن → روح ع dashboard
+  if (token) {
+    return redirect("/dashboard");
+  }
   return (
     <>
       <div className="relative min-h-screen overflow-hidden bg-[#E9ECF2]">

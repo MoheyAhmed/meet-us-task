@@ -38,10 +38,10 @@ export default function LoginForm() {
 
             <form
               onSubmit={handleSubmit}
-              className="w-[90%] lg:w-[70%] mx-auto mt-8"
+              className="relative w-[90%] lg:w-[70%] mx-auto mt-8"
             >
               <div className="relative mb-3">
-                <div className="absolute inset-y-0 start-0 -top-3 flex items-center ps-3.5 pointer-events-none">
+                <div className="absolute inset-y-0 start-0 -top-3 flex items-center ps-3.5">
                   <Image
                     src={emailIcon}
                     alt="email"
@@ -59,7 +59,7 @@ export default function LoginForm() {
               </div>
 
               <div className="relative">
-                <div className="absolute inset-y-0 start-0 -top-3 flex items-center ps-3.5 pointer-events-none">
+                <div className="absolute inset-y-0 start-0 -top-3 flex items-center ps-3.5 ">
                   <Image
                     src={lockIcon}
                     alt="email"
