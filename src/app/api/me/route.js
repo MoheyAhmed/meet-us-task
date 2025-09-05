@@ -12,5 +12,11 @@ export async function GET() {
   if (!res.ok) return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 
   const data = await res.json();
-  return NextResponse.json({ id: data.id, name: data.name });
+  return NextResponse.json({
+    id: data.id,
+    name: data.name,
+    email: data.email,
+    organization_id: data.organization_id,
+    status: data.status,
+  });
 }

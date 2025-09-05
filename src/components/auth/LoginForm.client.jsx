@@ -25,8 +25,8 @@ export default function LoginForm() {
 
   return (
     <>
-      <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-12">
-        <div>
+      <section className="grid grid-cols-1 lg:grid-cols-2 items-center lg:gap-y-12">
+        <div className="order-2 lg:order-1 pb-10 lg:pb-0">
           <div className="w-full lg:w-[554px] text-center ">
             <h1 className="font-[400] text-[56px] text-[#1A1A1E]">
               Welcome back
@@ -89,8 +89,8 @@ export default function LoginForm() {
           </div>
         </div>
 
-        <div>
-          <div className="text-center w-full h-full">
+        <div className="order-1 lg:order-1">
+          <div className="text-center w-full h-[40%] lg:h-full">
             <Image
               src={Logo}
               alt="Logo"

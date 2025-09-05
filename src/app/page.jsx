@@ -21,7 +21,7 @@ export default function Page() {
 
         {/* bottom-right */}
         {/* bg-gradient-to-br from-[#9E77F6] to-[#E477F6] */}
-        <div className="absolute -bottom-5 -right-50 w-[600px] h-[200px]  bg-[#9E77F6] blur-[90px]"></div>
+        <div className="absolute -bottom-10 -right-50 w-[600px] h-[200px]  bg-[#9E77F6] blur-[90px]"></div>
 
         {/* top-right */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E477F6] rounded-full blur-[400px] opacity-60"></div>
