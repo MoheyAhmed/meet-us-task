@@ -9,6 +9,6 @@ export async function POST() {
     maxAge: 0,
   });
 
-  // رجع redirect على صفحة الـ login (home page "/")
-  return NextResponse.redirect(new URL("/", process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"));
+  // Redirect للـ root ("/") بشكل relative
+  return NextResponse.redirect("/");
 }
