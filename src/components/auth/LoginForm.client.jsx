@@ -26,12 +26,12 @@ export default function LoginForm() {
   return (
     <>
       <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-12">
-        <div className="">
-          <div className="w-full lg:w-[554px] text-center h-[415px]">
+        <div>
+          <div className="w-full lg:w-[554px] text-center ">
             <h1 className="font-[400] text-[56px] text-[#1A1A1E]">
               Welcome back
             </h1>
-            <p className="font-[400] text-[18px] lg:w-[381px] h-[56px] mx-auto text-[#62626B]">
+            <p className="font-[400] text-[18px] lg:w-[381px]  mx-auto text-[#62626B]">
               Step into our shopping metaverse for an unforgettable shopping
               experience
             </p>
@@ -89,12 +89,12 @@ export default function LoginForm() {
           </div>
         </div>
 
-        <div className="">
+        <div>
           <div className="text-center w-full h-full">
             <Image
               src={Logo}
               alt="Logo"
-              className="w-[100%] h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
