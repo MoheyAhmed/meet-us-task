@@ -27,7 +27,7 @@ export default function Page() {
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E477F6] rounded-full blur-[400px] opacity-60"></div>
 
         <div className="lg:max-h-screen lg:overflow-hidden flex items-center  min-h-screen overflow-hidden bg-[#E9ECF2] rounded-3xl border-2 border-[#fff] mx-auto pt-7 lg:pt-0">
-          <div className="container mx-auto ">
+          <div className="container max-w-screen-xl mx-auto ">
             <LoginForm />
           </div>
         </div>

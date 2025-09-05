@@ -8,7 +8,7 @@ export default async function DashboardPage() {
   if (!token) return redirect("/");
 
   // نجيب بيانات المستخدم من API الداخلية
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || "https://meet-us-task-gamma.vercel.app/" || "http://localhost:3000" }/api/me`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || "https://meet-us-task-gamma.vercel.app" || "http://localhost:3000" }/api/me`, {
     headers: { Cookie: `auth-token=${token}` },
     cache: "no-store",
   });
@@ -39,7 +39,7 @@ export default async function DashboardPage() {
 
         {/* Logout form */}
         <form action="/api/logout" method="post" className="text-center mt-6">
-          <button className="px-4 py-2 bg-red-500 text-white rounded-lg">
+          <button className="px-4 py-2 bg-red-500 text-white rounded-lg cursor-pointer hover:bg-red-600 transition">
             Logout
           </button>
         </form>
