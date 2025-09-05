@@ -7,9 +7,12 @@ export default async function DashboardPage() {
   // لو مفيش توكن → رجع للـ login
   if (!token) return redirect("/");
 
-  // نجيب بيانات المستخدم من API الداخلية
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || "https://meet-us-task-gamma.vercel.app" || "http://localhost:3000" }/api/me`, {
-    headers: { Cookie: `auth-token=${token}` },
+  // نجيب بيانات المستخدم من الـ backend API مباشرة
+  const res = await fetch("https://api-yeshtery.dev.meetusvr.com/v1/user/info", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
     cache: "no-store",
   });
 
@@ -21,20 +24,24 @@ export default async function DashboardPage() {
     <section className="flex justify-center items-center min-h-screen bg-[#E9ECF2] ">
       <div className="border border-[#fff] bg-white p-12 rounded-4xl shadow-lg">
         <h1 className="text-2xl mb-4">
-          Welcome, <span className="font-bold text-3xl text-red-500">{user.name}</span>
+          Welcome,{" "}
+          <span className="font-bold text-3xl text-red-500">{user.name}</span>
         </h1>
         <p className="mb-4 text-2xl">
-          Your Email is: <span className="font-bold text-blue-600">{user.email}</span>
+          Your Email is:{" "}
+          <span className="font-bold text-blue-600">{user.email}</span>
         </p>
         <p className="mb-4 text-2xl">
-          Your ID is: <span className="font-bold text-blue-600">{user.id}</span>
+          Your ID is:{" "}
+          <span className="font-bold text-blue-600">{user.id}</span>
         </p>
         <p className="mb-4 text-2xl">
           Your Organization Id is:{" "}
           <span className="font-bold text-blue-600">{user.organization_id}</span>
         </p>
         <p className="mb-4 text-2xl">
-          Your Status is: <span className="font-bold text-blue-600">{user.status}</span>
+          Your Status is:{" "}
+          <span className="font-bold text-blue-600">{user.status}</span>
         </p>
 
         {/* Logout form */}
