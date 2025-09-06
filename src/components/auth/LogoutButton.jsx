@@ -1,15 +1,11 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 
 export default function LogoutButton() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    // ابعت للـ API
     await fetch("/api/logout", { method: "POST" });
-
-    // بعد ما الكوكي تتمسح → redirect للـ login
     router.push("/");
   };
 
