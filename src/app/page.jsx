@@ -10,7 +10,7 @@ export default function Page() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#E9ECF2]">
+    <div className="relative min-h-screen md:max-h-screen overflow-hidden bg-[#E9ECF2]">
       {/* background shapes */}
       <div className="absolute top-0 left-[30%] w-[800px] h-[100px] bg-[#E477F6] blur-[100px]"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#B0D2E5] rounded-full blur-[800px] opacity-0"></div>
