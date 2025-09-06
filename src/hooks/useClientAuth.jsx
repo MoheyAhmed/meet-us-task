@@ -14,6 +14,7 @@ export function useClientAuth() {
     setLoading(true);
     setError(null);
     try {
+      // نعمل login
       const res = await fetch("/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -25,23 +26,29 @@ export function useClientAuth() {
         throw new Error(data.message || "Login failed");
       }
 
-      const me = await fetch("/api/me");
+      // نجيب بيانات اليوزر بعد ما الكوكي تحفظ
+      const me = await fetch("/api/me", { cache: "no-store" });
       if (!me.ok) throw new Error("Failed to fetch user");
 
       const user = await me.json();
       setUser(user);
+
+      // روح ع الـ dashboard
       router.push("/dashboard");
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
   };
 
   const logout = async () => {
-    await fetch("/api/logout", { method: "POST" });
-    clearUser();
-    router.push("/");
+    try {
+      await fetch("/api/logout", { method: "POST" });
+    } finally {
+      clearUser();
+      router.push("/");
+    }
   };
 
   return { login, logout, loading, error };

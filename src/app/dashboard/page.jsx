@@ -6,7 +6,9 @@ export default async function DashboardPage() {
   const token = cookies().get("auth-token")?.value;
   if (!token) return redirect("/");
 
-  const res = await fetch(`${process.env.APP_URL || "http://localhost:3000"}/api/me`, {
+  // كلم API الداخلي بتاعنا
+  const baseUrl = process.env.APP_URL || "http://localhost:3000";
+  const res = await fetch(`${baseUrl}/api/me`, {
     headers: { Cookie: `auth-token=${token}` },
     cache: "no-store",
   });
